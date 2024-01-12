@@ -1,0 +1,33 @@
+GET http://localhost:4000/v1/healthcheck
+######
+POST  http://localhost:4000/v1/movies/
+Content-Type: application/json 
+
+{"title":"The Breakfast Club","year":1986, "runtime":"96 mins","genres":["drama"]}
+#####
+GET  http://localhost:4000/v1/movies/8
+####
+PATCH http://localhost:4000/v1/movies/9
+Content-Type: application/json 
+
+{"title":"The Breakfast Club"}
+#####
+DELETE   http://localhost:4000/v1/movies/8
+#####
+GET http://localhost:4000/v1/movies?page_size=2&page=2
+Authorization: Bearer U3PA4QJGSS3262SXYHTD4SZWHY
+######
+POST  http://localhost:4000/v1/users/
+Content-Type: application/json 
+
+{"name":"Lucas Mora","email":"locas@halimo.com","password":"123456asdASD$"}
+#####
+PUT  http://localhost:4000/v1/users/activated
+Content-Type: application/json 
+
+{"token":"7543GN3JH4SOK4VW3FNWLR2R6E"}
+#####
+POST  http://localhost:4000/v1/tokens/authentication
+Content-Type: application/json 
+
+{"email":"locas@halimo.com","password":"123456asdASD$"}
