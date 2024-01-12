@@ -2,8 +2,6 @@ package main
 
 import (
 	"flag"
-	"fmt"
-	"os"
 	"strings"
 )
 
@@ -58,13 +56,6 @@ func getConfig() *config {
 		cfg.cors.trustedOrigins = strings.Fields(val)
 		return nil
 	})
-
-	displayVersion := flag.Bool("version", false, "Display version and exit")
-
-	if *displayVersion {
-		fmt.Printf("Version:\t%s\n", version)
-		os.Exit(0)
-	}
 
 	return &cfg
 }

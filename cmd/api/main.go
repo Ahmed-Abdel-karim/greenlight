@@ -7,6 +7,7 @@ import (
 	"github/greenlight/internal/data"
 	"github/greenlight/internal/jsonlog"
 	"github/greenlight/internal/mailer"
+	"github/greenlight/internal/vcs"
 	"os"
 	"sync"
 	"time"
@@ -17,7 +18,9 @@ import (
 	_ "github.com/lib/pq"
 )
 
-const version = "1.0.0"
+var (
+	version = vcs.Version()
+)
 
 type application struct {
 	config config
@@ -28,6 +31,7 @@ type application struct {
 }
 
 func main() {
+	checkVersion()
 	cfg := getConfig()
 	logger := jsonlog.NewLogger(os.Stdout, jsonlog.LevelInfo)
 	db, err := openDB(cfg)
@@ -71,7 +75,6 @@ func main() {
 func openDB(cfg *config) (*sql.DB, error) {
 	// Use sql.Open() to create an empty connection pool, using the DSN from the config
 	// struct.
-	fmt.Println("dsn", cfg.db.dsn)
 	db, err := sql.Open("postgres", cfg.db.dsn)
 	if err != nil {
 		return nil, err

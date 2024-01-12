@@ -4,6 +4,7 @@ import (
 	"context"
 	"database/sql"
 	"errors"
+	"flag"
 	"fmt"
 	"log"
 	"net/http"
@@ -85,4 +86,14 @@ func (app application) migrateDb(db *sql.DB) error {
 		return err
 	}
 	return migrator.Up()
+}
+
+func checkVersion() {
+	displayVersion := flag.Bool("version", false, "Display version and exit")
+	flag.Parse()
+
+	if *displayVersion {
+		fmt.Printf("Version:\t%s\n", version)
+		os.Exit(0)
+	}
 }
