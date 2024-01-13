@@ -3,8 +3,8 @@ package main
 import (
 	"errors"
 	"fmt"
-	"github/greenlight/internal/data"
-	"github/greenlight/internal/validator"
+	"github.com/Ahmed-Abdel-karim/greenlight/internal/data"
+	"github.com/Ahmed-Abdel-karim/greenlight/internal/validator"
 	"net/http"
 	"time"
 )

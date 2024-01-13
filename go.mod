@@ -1,4 +1,4 @@
-module github/greenlight
+module github.com/Ahmed-Abdel-karim/greenlight
 
 go 1.21.5
 

@@ -2,7 +2,7 @@ package main
 
 import (
 	"context"
-	"github/greenlight/internal/data"
+	"github.com/Ahmed-Abdel-karim/greenlight/internal/data"
 	"net/http"
 )
 

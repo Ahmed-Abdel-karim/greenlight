@@ -4,13 +4,14 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
-	"github/greenlight/internal/data"
-	"github/greenlight/internal/jsonlog"
-	"github/greenlight/internal/mailer"
-	"github/greenlight/internal/vcs"
 	"os"
 	"sync"
 	"time"
+
+	"github.com/Ahmed-Abdel-karim/greenlight/internal/data"
+	"github.com/Ahmed-Abdel-karim/greenlight/internal/jsonlog"
+	"github.com/Ahmed-Abdel-karim/greenlight/internal/mailer"
+	"github.com/Ahmed-Abdel-karim/greenlight/internal/vcs"
 
 	"github.com/golang-migrate/migrate/v4"               // New import
 	_ "github.com/golang-migrate/migrate/v4/source/file" // New import
